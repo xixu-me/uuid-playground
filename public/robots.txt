@@ -1,0 +1,11 @@
+# robots.txt for UUID Playground
+# https://uuid.xi-xu.me
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://uuid.xi-xu.me/sitemap.xml
+
+# Crawl-delay (optional, adjust if needed)
+# Crawl-delay: 1
