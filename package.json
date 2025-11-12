@@ -15,8 +15,8 @@
     "jsdom": "^24.1.3",
     "prettier": "^3.3.2",
     "typescript": "^5.5.3",
-    "vite": "^5.3.1",
-    "vitest": "^1.6.0"
+    "vite": "^7.2.2",
+    "vitest": "^4.0.8"
   },
   "name": "uuid-playground",
   "private": true,
