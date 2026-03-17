@@ -15,6 +15,10 @@ updates:
     labels:
       - dependencies
       - dependabot
+    ignore:
+      - dependency-name: eslint
+        update-types:
+          - version-update:semver-major
     groups:
       npm-production:
         dependency-type: production
