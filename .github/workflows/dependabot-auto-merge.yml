@@ -22,16 +22,6 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Approve patch and minor updates
-        if: |
-          steps.metadata.outputs.update-type == 'version-update:semver-patch' ||
-          steps.metadata.outputs.update-type == 'version-update:semver-minor' ||
-          steps.metadata.outputs.update-type == 'version-update:semver-major'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_URL: ${{ github.event.pull_request.html_url }}
-        run: gh pr review "$PR_URL" --approve --body "Auto-approved for Dependabot update after policy and CI checks."
-
       - name: Enable auto-merge after checks pass
         if: |
           steps.metadata.outputs.update-type == 'version-update:semver-patch' ||
