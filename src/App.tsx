@@ -10,8 +10,8 @@ import { generateUUID, getAllFormats, UUIDFormats, UUIDVersion } from './lib/uui
 import './styles/App.css'
 
 function App() {
-  const [currentUUID, setCurrentUUID] = useState<string>('')
-  const [formats, setFormats] = useState<UUIDFormats | null>(null)
+  const [currentUUID, setCurrentUUID] = useState<string>(() => generateUUID('v4'))
+  const [formats, setFormats] = useState<UUIDFormats | null>(() => getAllFormats(currentUUID))
   const [isLocked, setIsLocked] = useState(false)
   const [version, setVersion] = useState<UUIDVersion>('v4')
   const [autoGenerate, setAutoGenerate] = useState(false)
@@ -51,12 +51,6 @@ function App() {
     setFormats(validatedFormats)
     showToast('UUID loaded successfully', 'success')
   }
-
-  // Generate initial UUID on mount
-  useEffect(() => {
-    handleGenerate()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
 
   // Auto-generate functionality
   useEffect(() => {
