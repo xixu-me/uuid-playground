@@ -16,6 +16,9 @@ updates:
       - dependencies
       - dependabot
     ignore:
+      - dependency-name: typescript
+        update-types:
+          - version-update:semver-major
       - dependency-name: eslint
         versions:
           - ">=10"
